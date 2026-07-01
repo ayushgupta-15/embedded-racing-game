@@ -27,10 +27,16 @@ jobs:
         chmod +x xc8-v3.10-full-install-linux-x64-installer.run
         sudo ./xc8-v3.10-full-install-linux-x64-installer.run --mode unattended --netservername localhost
         
+    - name: Install Device Family Pack
+      run: |
+        wget https://packs.download.microchip.com/Microchip.PIC16Fxxx_DFP.1.6.156.atpack
+        sudo mkdir -p /opt/microchip/dfp
+        sudo unzip -q Microchip.PIC16Fxxx_DFP.1.6.156.atpack -d /opt/microchip/dfp
+        
     - name: Build Project
       run: |
         export PATH=$PATH:/opt/microchip/xc8/v3.10/pic-as/bin
-        make build
+        make build MP_CC="/opt/microchip/xc8/v3.10/bin/xc8-cc" MP_AS="/opt/microchip/xc8/v3.10/pic-as/bin/pic-as" MP_LD="/opt/microchip/xc8/v3.10/pic-as/bin/pic-as" DFP_DIR="/opt/microchip/dfp"
         
     - name: Upload HEX Artifact
       uses: actions/upload-artifact@v4
