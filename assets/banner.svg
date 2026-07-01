@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 500" width="1600" height="500">
+    <defs>
+        <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#0F172A" />
+            <stop offset="100%" stop-color="#1E293B" />
+        </linearGradient>
+        <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#10B981" stop-opacity="0.15" />
+            <stop offset="100%" stop-color="#0EA5E9" stop-opacity="0.3" />
+        </linearGradient>
+        <filter id="blur">
+            <feGaussianBlur stdDeviation="20" />
+        </filter>
+        <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+            <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#334155" stroke-width="1" opacity="0.5"/>
+            <circle cx="60" cy="60" r="1.5" fill="#475569" />
+        </pattern>
+        <pattern id="circuit" width="300" height="300" patternUnits="userSpaceOnUse">
+            <path d="M 50 100 L 150 100 M 100 50 L 100 150 M 150 100 L 180 70 L 280 70 M 50 100 L 20 130 L 0 130 M 100 150 L 70 180 L 70 300 M 100 50 L 130 20 L 130 0" fill="none" stroke="#10B981" stroke-width="1.5" stroke-opacity="0.3"/>
+            <circle cx="150" cy="100" r="3" fill="#10B981" opacity="0.5"/>
+            <circle cx="50" cy="100" r="3" fill="#10B981" opacity="0.5"/>
+            <circle cx="100" cy="50" r="3" fill="#10B981" opacity="0.5"/>
+            <circle cx="100" cy="150" r="3" fill="#10B981" opacity="0.5"/>
+            <circle cx="180" cy="70" r="3" fill="#10B981" opacity="0.5"/>
+        </pattern>
+    </defs>
+    
+    <rect width="100%" height="100%" fill="url(#bg-grad)" />
+    <rect width="100%" height="100%" fill="url(#grid)" />
+    <rect width="100%" height="100%" fill="url(#circuit)" />
+    <circle cx="800" cy="220" r="300" fill="url(#glow)" filter="url(#blur)" />
+    
+    <!-- Central Chip (DIP-40) -->
+    <g transform="translate(730, 30)">
+        <!-- Outer package -->
+        <rect x="0" y="0" width="140" height="315" rx="8" fill="#020617" stroke="#10B981" stroke-width="3" />
+        <rect x="15" y="15" width="110" height="285" rx="4" fill="#0F172A" />
+        <!-- Notch -->
+        <path d="M 50 0 A 20 20 0 0 0 90 0" fill="#0F172A" stroke="#10B981" stroke-width="3"/>
+        
+        <!-- Pins -->
+        <!-- Left -->
+        <path d="M0 15 L-25 15 M0 30 L-25 30 M0 45 L-25 45 M0 60 L-25 60 M0 75 L-25 75 M0 90 L-25 90 M0 105 L-25 105 M0 120 L-25 120 M0 135 L-25 135 M0 150 L-25 150 M0 165 L-25 165 M0 180 L-25 180 M0 195 L-25 195 M0 210 L-25 210 M0 225 L-25 225 M0 240 L-25 240 M0 255 L-25 255 M0 270 L-25 270 M0 285 L-25 285 M0 300 L-25 300" stroke="#94A3B8" stroke-width="5" />
+        <!-- Right -->
+        <path d="M140 15 L165 15 M140 30 L165 30 M140 45 L165 45 M140 60 L165 60 M140 75 L165 75 M140 90 L165 90 M140 105 L165 105 M140 120 L165 120 M140 135 L165 135 M140 150 L165 150 M140 165 L165 165 M140 180 L165 180 M140 195 L165 195 M140 210 L165 210 M140 225 L165 225 M140 240 L165 240 M140 255 L165 255 M140 270 L165 270 M140 285 L165 285 M140 300 L165 300" stroke="#94A3B8" stroke-width="5" />
+        
+        <!-- Pin 1 Dot -->
+        <circle cx="28" cy="28" r="6" fill="#475569" />
+        
+        <!-- Text -->
+        <text x="70" y="145" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="800" font-size="28" fill="#F8FAFC" letter-spacing="1" text-anchor="middle">PIC16F</text>
+        <text x="70" y="180" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="800" font-size="28" fill="#F8FAFC" letter-spacing="1" text-anchor="middle">877A</text>
+        <text x="70" y="215" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="600" font-size="14" fill="#94A3B8" letter-spacing="2" text-anchor="middle">8-BIT MCU</text>
+    </g>
+
+    <!-- Banner Text -->
+    <g text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+        <text x="800" y="415" font-size="44" font-weight="800" fill="#F8FAFC" letter-spacing="2">Real-Time Multi-Lane Racing Game</text>
+        <text x="800" y="460" font-size="20" font-weight="600" fill="#10B981" letter-spacing="3">PIC16F877A • ASSEMBLY • KS0108 GLCD • EEPROM PERSISTENCE</text>
+    </g>
+</svg>
