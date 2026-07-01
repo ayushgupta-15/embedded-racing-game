@@ -11,11 +11,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
 
     - name: Cache XC8 Compiler
       id: cache-xc8
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: /opt/microchip/xc8
         key: ${{ runner.os }}-xc8-v3.10
@@ -33,7 +33,7 @@ jobs:
         make build
         
     - name: Upload HEX Artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: firmware-hex
         path: dist/default/production/*.hex
